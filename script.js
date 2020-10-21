@@ -12,7 +12,6 @@ function displayResults(responseJson){
     if (responseJson.data.length != 0){
         for (let i = 0;i <responseJson.data.length;i++){
             let addresses = responseJson.data[i].addresses
-            console.log(addresses)
             let physicalAddress ="";
             let mailingAddress = "";
             for (j = 0; j < addresses.length; j++){
@@ -58,13 +57,8 @@ function watchForm() {
       searchTerm = $('#search-term').val();
       stateCode = $('#state').val();
       const maxResults = $('#number-of-results').val();
-    //   console.log(searchTerm);
-    //   console.log(stateCode);    
-    //   console.log(maxResults);
     getPark(searchTerm,stateCode,maxResults);
     });
   }
 
   $(watchForm);
-
-//   <li><h3>${responseJson.data[i].fullName}</h3><p>${responseJson.data[i].description}</p><a href = "${responseJson.data[i].url}">Visit its site</a><br></br>
