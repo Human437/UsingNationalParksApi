@@ -64,8 +64,9 @@ function getPark(stateCode,limit){
 function watchForm() {
     $('form').submit(event => {
       event.preventDefault();
-      const states = $('#list-of-states').val();
-      states_list = (states.trim().split(','))
+      let states = $('#list-of-states').val();
+      states = states.replace(/\s/g, '');
+      states_list = (states.split(','))
       maxResults = $('#number-of-results').val();
       getPark(states_list,maxResults);
     });
