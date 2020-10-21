@@ -13,11 +13,15 @@
         <h1>National Park Finder</h1>
 
         <form id="js-form">
-            <label for="search-term">Please enter the name of the park you are looking for:</label>
-            <input type="text" name="search-term" id="search-term" required>
+            <label for="list-of-states">Please enter a list of states you want to find parks in. Enter the two character state codes with a comma seperating each state. For example: CA, FL, MI</label>
+            <input type="text" name="list-ofstates" id="list-of-states" required>
             <br>
             <br>
-            <label for="search-term">Please select the state your park is located in:</label>
+            <!-- <label for="search-term">If you know the name of the park you are looking for, please enter the name of the park.</label>
+            <input type="text" name="search-term" id="search-term">
+            <br>
+            <br> -->
+            <!-- <label for="search-term">Please select the state your park is located in:</label>
             <select name="state" size="1" id="state">
                 <option value="AL">Alabama</option>
                 <option value="AK">Alaska</option>
@@ -72,7 +76,7 @@
                 <option value="WY">Wyoming</option>
               </select>
               <br>
-              <br>
+              <br> -->
             <label for="number-of-results">Please enter the maximum number of results you want to see:</label>
             <input type="number" name="number-of-results" id="number-of-results" value=10 min=1 max=50 required>
             <br>

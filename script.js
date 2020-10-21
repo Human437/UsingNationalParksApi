@@ -4,6 +4,7 @@ const searchURL = `https://developer.nps.gov/api/v1/parks?api_key=${api_key}`;
 
 let searchTerm = "";
 let stateCode = "";
+let states_list = "";
 
 function displayResults(responseJson){
     console.log(responseJson);
@@ -35,9 +36,11 @@ function displayResults(responseJson){
   }
 
 
-function getPark(query,stateCode,limit){
-    const url = `${searchURL}&stateCode=${stateCode}&limit=${limit}&start=0&q=${query}`;
+function getPark(stateCode,limit){
+
+    const url = `${searchURL}&stateCode=${stateCode}&limit=${limit}&start=0`;
     console.log(url);
+    
     fetch(url)
     .then(response => {
         if (response.ok) {
@@ -51,14 +54,25 @@ function getPark(query,stateCode,limit){
     });
 }
 
+function getParks(states_list){
+    for (let i = 0; i <states_list.length; i++){
+        let stateCode =""
+        
+    }
+}
+
 function watchForm() {
     $('form').submit(event => {
       event.preventDefault();
-      searchTerm = $('#search-term').val();
-      stateCode = $('#state').val();
+    //   searchTerm = $('#search-term').val();
+    //   stateCode = $('#state').val();
+      const states = $('#list-of-states').val();
+      states_list = (states.trim().split(','))
+      console.log(states_list)
       const maxResults = $('#number-of-results').val();
-    getPark(searchTerm,stateCode,maxResults);
+    // getPark(searchTerm,stateCode,maxResults);
     });
-  }
+}
+
 
   $(watchForm);
